@@ -1,13 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+import { RoutingModule } from './routing.module';
+import { CommonModule } from '@angular/common';
+import { ReadonlyComponent } from './readonly/readonly.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [
+    CommonModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RoutingModule,
+  ],
+  declarations: [AppComponent, ReadonlyComponent],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
