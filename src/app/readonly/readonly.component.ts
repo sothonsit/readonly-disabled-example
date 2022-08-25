@@ -16,10 +16,15 @@ export class ReadonlyComponent implements OnInit {
       checkbox: new FormControl(),
       selected: new FormControl(''),
       input: new FormControl('', Validators.required),
+      input2: new FormControl('123'),
     });
   }
 
   onSubmit() {
     console.log(this.fg.value);
+  }
+
+  onReset() {
+    this.fg.reset();
   }
 }
