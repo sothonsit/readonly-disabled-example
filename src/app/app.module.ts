@@ -3,19 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { RoutingModule } from './routing.module';
 import { CommonModule } from '@angular/common';
 import { ReadonlyComponent } from './readonly/readonly.component';
+import { DisabledComponent } from './disabled/disabled.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RoutingModule,
-  ],
-  declarations: [AppComponent, ReadonlyComponent],
+  imports: [CommonModule, BrowserModule, FormsModule, ReactiveFormsModule],
+  declarations: [AppComponent, ReadonlyComponent, DisabledComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

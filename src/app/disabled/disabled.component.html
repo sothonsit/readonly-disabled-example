@@ -6,36 +6,35 @@
 >
   <br />
 
-  <h1>Readonly</h1>
+  <h1>Disabled</h1>
 
   <div class="form-check">
     <input
       class="form-check-input"
       type="checkbox"
       formControlName="checkbox"
-      readonly
     />
     <label class="form-check-label"> checkbox </label>
   </div>
 
   <br />
 
-  <select class="form-select" formControlName="selected" readonly>
+  <select class="form-select" formControlName="selected">
     <option value="">Please selected</option>
     <option value="1">One</option>
   </select>
 
   <br />
 
-  <input type="text" class="form-control" formControlName="input" readonly />
+  <input type="text" class="form-control" formControlName="input" />
   input: {{ fg.get('input').errors | json }}
 
   <br />
 
-  <input type="text" class="form-control" formControlName="input2" readonly />
+  <input type="text" class="form-control" formControlName="input2" />
 
   <br />
 
-  <button type="submit" readonly>Submit</button>
+  <button type="submit">Submit</button>
   <button type="button" (click)="onReset()">Reset</button>
 </form>

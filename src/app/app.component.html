@@ -1,1 +1,86 @@
-<router-outlet></router-outlet>
+<form
+  class="container"
+  autocomplete="off"
+  [formGroup]="fg"
+  (ngSubmit)="onSubmit()"
+>
+  <h1>Disabled and Readonly</h1>
+
+  <div class="form-group row">
+    <div class="col">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="gridCheck"
+          formControlName="checkboxDisabled"
+        />
+        <label class="form-check-label" for="gridCheck"> Disabled </label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="gridCheck"
+          formControlName="checkboxReadonly"
+        />
+        <label class="form-check-label" for="gridCheck"> Readonly </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Disabled placeholder"
+        formControlName="inputDisabled"
+      />
+      Disabled placeholder: {{ fg.get('inputDisabled').errors | json }}
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Readonly placeholder"
+        formControlName="inputReadonly"
+        readonly
+      />
+      Readonly placeholder: {{ fg.get('inputReadonly').errors | json }}
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Disabled"
+        formControlName="inputDisabled2"
+      />
+      Disabled Value ABC: {{ fg.get('inputDisabled2').errors | json }}
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Readonly"
+        formControlName="inputReadonly2"
+        readonly
+      />
+      Readonly Value ABC: {{ fg.get('inputDisabled2').errors | json }}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="button" class="btn btn-secondary" (click)="onReset()">
+      Reset
+    </button>
+  </div>
+
+  {{ this.fg.value | json }}
+</form>
