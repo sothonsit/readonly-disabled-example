@@ -16,6 +16,9 @@
           formControlName="checkboxDisabled"
         />
         <label class="form-check-label" for="gridCheck"> Disabled </label>
+        <br />
+        Valid : {{ fg.get('checkboxDisabled').valid | json }} <br />
+        InValid : {{ fg.get('checkboxDisabled').invalid | json }} <br />
       </div>
     </div>
     <div class="col">
@@ -28,7 +31,42 @@
           readonly
         />
         <label class="form-check-label" for="gridCheck"> Readonly </label>
+        <br />
+        Valid : {{ fg.get('checkboxReadonly').valid | json }} <br />
+        InValid : {{ fg.get('checkboxReadonly').invalid | json }} <br />
       </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col">
+      <select
+        id="selectDisabled"
+        class="form-select"
+        formControlName="selectDisabled"
+      >
+        <option value="">Please Select</option>
+        <option [value]="1">1</option>
+        <option [value]="2">2</option>
+      </select>
+      Valid : {{ fg.get('selectDisabled').valid | json }} <br />
+      InValid : {{ fg.get('selectDisabled').invalid | json }} <br />
+      Disabled placeholder: {{ fg.get('selectDisabled').errors | json }}
+    </div>
+    <div class="col">
+      <select
+        id="selectReadonly"
+        class="form-select"
+        formControlName="selectReadonly"
+        readonly
+      >
+        <option value="">Please Select</option>
+        <option [value]="1">1</option>
+        <option [value]="2">2</option>
+      </select>
+      Valid : {{ fg.get('selectReadonly').valid | json }} <br />
+      InValid : {{ fg.get('selectReadonly').invalid | json }} <br />
+      Disabled placeholder: {{ fg.get('selectReadonly').errors | json }}
     </div>
   </div>
 
@@ -37,19 +75,23 @@
       <input
         type="text"
         class="form-control"
-        placeholder="Disabled placeholder"
+        placeholder="Disabled placeholder and string empty"
         formControlName="inputDisabled"
       />
+      Valid : {{ fg.get('inputDisabled').valid | json }} <br />
+      InValid : {{ fg.get('inputDisabled').invalid | json }} <br />
       Disabled placeholder: {{ fg.get('inputDisabled').errors | json }}
     </div>
     <div class="col">
       <input
         type="text"
         class="form-control"
-        placeholder="Readonly placeholder"
+        placeholder="Readonly placeholder and string empty"
         formControlName="inputReadonly"
         readonly
       />
+      Valid : {{ fg.get('inputReadonly').valid | json }} <br />
+      InValid : {{ fg.get('inputReadonly').invalid | json }} <br />
       Readonly placeholder: {{ fg.get('inputReadonly').errors | json }}
     </div>
   </div>
@@ -62,6 +104,8 @@
         placeholder="Disabled"
         formControlName="inputDisabled2"
       />
+      Valid : {{ fg.get('inputDisabled2').valid | json }} <br />
+      InValid : {{ fg.get('inputDisabled2').invalid | json }} <br />
       Disabled Value ABC: {{ fg.get('inputDisabled2').errors | json }}
     </div>
     <div class="col">
@@ -72,7 +116,9 @@
         formControlName="inputReadonly2"
         readonly
       />
-      Readonly Value ABC: {{ fg.get('inputDisabled2').errors | json }}
+      Valid : {{ fg.get('inputReadonly2').valid | json }} <br />
+      InValid : {{ fg.get('inputReadonly2').invalid | json }} <br />
+      Readonly Value ABC: {{ fg.get('inputReadonly2').errors | json }}
     </div>
   </div>
 

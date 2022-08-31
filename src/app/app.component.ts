@@ -13,13 +13,19 @@ export class AppComponent {
 
   ngOnInit() {
     this.fg = new FormGroup({
-      checkboxDisabled: new FormControl({ value: null, disabled: true }),
-      checkboxReadonly: new FormControl(),
+      checkboxDisabled: new FormControl({ value: null, disabled: true }, [
+        Validators.required,
+        Validators.requiredTrue,
+      ]),
+      checkboxReadonly: new FormControl(null, [
+        Validators.required,
+        Validators.requiredTrue,
+      ]),
       inputDisabled: new FormControl(
-        { value: '', disabled: true },
+        { value: null, disabled: true },
         Validators.required
       ),
-      inputReadonly: new FormControl('', Validators.required),
+      inputReadonly: new FormControl(null, Validators.required),
       inputDisabled2: new FormControl(
         { value: 'Disabled Value ABC', disabled: true },
         Validators.required
@@ -28,6 +34,11 @@ export class AppComponent {
         'Readonly Value ABC',
         Validators.required
       ),
+      selectDisabled: new FormControl(
+        { value: null, disabled: true },
+        Validators.required
+      ),
+      selectReadonly: new FormControl(null, Validators.required),
     });
   }
 
