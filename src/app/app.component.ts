@@ -49,4 +49,8 @@ export class AppComponent {
   onReset() {
     this.fg.reset();
   }
+
+  prepare() {
+    const { inputReadonly2 } = this.fg.getRawValue();
+  }
 }
